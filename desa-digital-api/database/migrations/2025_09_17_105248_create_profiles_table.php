@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('about');
             $table->string('headman');
-            $table->int('people');
+            $table->integer('people');
             $table->decimal('agricultural_area', 16, 4);
             $table->decimal('total_area', 16, 4);
             $table->softDeletes();
