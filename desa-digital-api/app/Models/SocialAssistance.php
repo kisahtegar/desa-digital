@@ -20,13 +20,19 @@ class SocialAssistance extends Model
         'is_available',
     ];
 
+    protected $casts = [
+        'is_available' => 'boolean',
+    ];
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('provider', 'LIKE', '%' . $search . '%')
+            ->orWhere('amount', 'LIKE', '%' . $search . '%');
+    }
+
     public function socialAssistanceRecipients()
     {
         return $this->belongsTo(SocialAssistanceRecipient::class);
-    }
-
-    public function headOfFamily()
-    {
-        return $this->belongsTo(HeadOfFamily::class);
     }
 }
