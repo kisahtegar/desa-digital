@@ -21,6 +21,7 @@ class Event extends Model
     ];
 
     protected $casts = [
+        'price' => 'decimal:2',
         'is_active' => 'boolean',
     ];
 
