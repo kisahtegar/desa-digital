@@ -90,7 +90,7 @@ class DevelopmentApplicantRepository implements DevelopmentApplicantRepositoryIn
             $developmentApplicant->user_id = $data['user_id'];
 
             if (isset($data['status'])) {
-                $developmentApplicant->status = $data['status']
+                $developmentApplicant->status = $data['status'];
             }
 
             $developmentApplicant->save();
